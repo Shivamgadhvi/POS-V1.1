@@ -5,6 +5,7 @@ import ItemCard from './components/ItemCard.jsx'
 import CartBar from './components/CartBar.jsx'
 import OrderReview from './components/OrderReview.jsx'
 import OrderLog from './components/OrderLog.jsx'
+import CustomOrderForm from './components/CustomOrderForm.jsx'
 import { categories } from './data/menuItems.js'
 import { computeTotals } from './lib/orderMath.js'
 import { submitOrder, retrySubmit } from './lib/orders.js'
@@ -96,10 +97,23 @@ export default function App() {
   const updateCart = (updater) => {
     setOrders((prev) => prev.map((o) => (o.localId === activeOrderId ? { ...o, cart: updater(o.cart) } : o)))
   }
-
   const handleAdd = (itemId) => {
     updateCart((cart) => ({ ...cart, [itemId]: { qty: 1, scoops: cart[itemId]?.scoops || 0 } }))
   }
+  const handleAddCustomOrder = ({ name, price }) => {
+  const customId = `custom-${crypto.randomUUID()}`
+
+  updateCart((cart) => ({
+    ...cart,
+    [customId]: {
+      qty: 1,
+      scoops: 0,
+      custom: true,
+      name,
+      price,
+    },
+  }))
+}
 
   const handleChangeQty = (itemId, delta) => {
     updateCart((cart) => {
@@ -195,19 +209,23 @@ export default function App() {
       {view === 'menu' && activeOrder && (
         <>
           <CategoryTabs categories={categories} activeCategory={activeCategory} onSelect={setActiveCategory} />
-          <div className="item-list">
-            {activeCategoryData.items.map((item) => (
-              <ItemCard
-                key={item.id}
-                item={item}
-                categoryIcon={activeCategoryData.icon}
-                cartEntry={activeOrder.cart[item.id]}
-                onAdd={handleAdd}
-                onChangeQty={handleChangeQty}
-                onChangeScoops={handleChangeScoops}
-              />
-            ))}
-          </div>
+          {activeCategory === 'custom' ? (
+  <CustomOrderForm onAdd={handleAddCustomOrder} />
+) : (
+  <div className="item-list">
+    {activeCategoryData.items.map((item) => (
+      <ItemCard
+        key={item.id}
+        item={item}
+        categoryIcon={activeCategoryData.icon}
+        cartEntry={activeOrder.cart[item.id]}
+        onAdd={handleAdd}
+        onChangeQty={handleChangeQty}
+        onChangeScoops={handleChangeScoops}
+      />
+    ))}
+  </div>
+)}
           <CartBar count={cartCount} total={total} onOpen={() => cartCount > 0 && setView('review')} />
         </>
       )}
