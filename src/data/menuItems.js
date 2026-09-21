@@ -59,6 +59,12 @@ export const categories = [
       { id: 'brownie-bites', name: 'Brownie Bites', tagline: 'Shuru majboori mein kiye the... ab maza aa raha hai', price: 129, image: '', iceCream: true },
     ],
   },
+  {
+    id: 'custom',
+    name: 'Custom Order',
+    icon: 'plus',
+    items: [],
+  },
 ]
 
 // Flat lookup maps, built once, used throughout the app so components
