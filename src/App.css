@@ -519,3 +519,15 @@ body {
   border-radius: 7px;
   cursor: pointer;
 }
+.custom-order-form {
+  padding: 14px;
+  background: var(--cream-card);
+  border: 0.5px solid var(--border-soft);
+  border-radius: 14px;
+  margin: 12px 14px 100px;
+}
+
+.custom-order-form .confirm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
