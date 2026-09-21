@@ -18,7 +18,7 @@ export default function OrderReview({ lines, gross, initialName, initialPhone, i
       {lines.map((l) => (
         <div className="cart-line" key={l.key}>
           <div className="cart-line-name">
-            <span>{l.item.name} x{l.qty}</span>
+            <span>{l.custom ? l.item.name : `${l.item.name} x${l.qty}`}</span>
             {l.scoops > 0 && <span className="cart-line-sub">+ ice cream x{l.scoops}</span>}
           </div>
           <span>₹{l.lineTotal}</span>
