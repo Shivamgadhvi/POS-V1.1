@@ -50,7 +50,7 @@ export default function OrderLog({ orders, onBack, onReopen, onDiscard, onMarkDe
             <div className="log-items">
               {lines.length === 0 && <span className="log-items-empty">No items added yet</span>}
               {lines.map((l, i) => (
-                <div key={i}>{l.item.name} x{l.qty}{l.scoops > 0 ? ` (+${l.scoops} ice cream)` : ''}</div>
+                <div key={i}>{l.custom ? l.item.name : `${l.item.name} x${l.qty}`}{l.scoops > 0 ? ` (+${l.scoops} ice cream)` : ''}</div>
               ))}
             </div>
             <div className="log-total-row"><span>Total</span><span>₹{total}</span></div>
@@ -88,7 +88,7 @@ export default function OrderLog({ orders, onBack, onReopen, onDiscard, onMarkDe
             <div className="log-customer">{o.name || 'Walk-in'}{o.phone ? ` · ${o.phone}` : ''}</div>
             <div className="log-items">
               {lines.map((l, i) => (
-                <div key={i}>{l.item.name} x{l.qty}{l.scoops > 0 ? ` (+${l.scoops} ice cream)` : ''}</div>
+                <div key={i}>{l.custom ? l.item.name : `${l.item.name} x${l.qty}`}{l.scoops > 0 ? ` (+${l.scoops} ice cream)` : ''}</div>
               ))}
             </div>
             <div className="log-total-row"><span>Collected · {o.paymentMethod}</span><span>₹{o.amountCollected}</span></div>
