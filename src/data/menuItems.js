@@ -21,18 +21,7 @@ export const categories = [
       { id: 'biscoff-bliss', name: 'Biscoff Bliss', tagline: 'Dil garden - garden ho gaya', price: 149, image: '', iceCream: true },
     ],
   },
-  {
-    id: 'spreads',
-    name: 'Brownies with Spreads',
-    icon: 'sandwich',
-    items: [
-      { id: 'nutella-nirvana', name: 'Nutella Nirvana', tagline: 'All izz well... jab Nutella ho', price: 79, image: '', iceCream: true },
-      { id: 'biscoff-royale', name: 'Biscoff Royale', tagline: 'Mogambo kush hua!', price: 79, image: '', iceCream: true },
-      { id: 'kunafa-fusion', name: 'Kunafa Fusion', tagline: 'Naam to suna hi hoga... taste yaad rahega', price: 79, image: '', iceCream: true },
-      { id: 'choco-3000', name: 'Choco 3000', tagline: 'Kabhi kabhi lagta hai Apun hi dessert hai...', price: 99, image: '', iceCream: true },
-    ],
-  },
-  {
+    {
     id: 'bowls',
     name: 'Brownie Bowls',
     icon: 'soup',
@@ -64,6 +53,17 @@ export const categories = [
     name: 'Custom Order',
     icon: 'plus',
     items: [],
+  },
+  {
+    id: 'spreads',
+    name: 'Brownies with Spreads',
+    icon: 'sandwich',
+    items: [
+      { id: 'nutella-nirvana', name: 'Nutella Nirvana', tagline: 'All izz well... jab Nutella ho', price: 79, image: '', iceCream: true },
+      { id: 'biscoff-royale', name: 'Biscoff Royale', tagline: 'Mogambo kush hua!', price: 79, image: '', iceCream: true },
+      { id: 'kunafa-fusion', name: 'Kunafa Fusion', tagline: 'Naam to suna hi hoga... taste yaad rahega', price: 79, image: '', iceCream: true },
+      { id: 'choco-3000', name: 'Choco 3000', tagline: 'Kabhi kabhi lagta hai Apun hi dessert hai...', price: 99, image: '', iceCream: true },
+    ],
   },
 ]
 
