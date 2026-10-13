@@ -17,7 +17,6 @@ export const categories = [
       { id: 'choco-blast', name: 'Choco Blast', tagline: 'Yeh chocolate muje de de... THAKUR', price: 119, image: '', iceCream: true },
       { id: 'nutty-royale', name: 'Nutty Royale', tagline: 'Ek bite ki kimaat tum kya jano', price: 129, image: '', iceCream: true },
       { id: 'kitkat-crackle', name: 'KitKat Crackle', tagline: 'Break to banta hai... aur yeh wala zaroor', price: 139, image: '', iceCream: true },
-      { id: 'double-decker', name: 'Double Decker', tagline: 'Uthale re baba... heavy hai', price: 149, image: '', iceCream: true },
       { id: 'biscoff-bliss', name: 'Biscoff Bliss', tagline: 'Dil garden - garden ho gaya', price: 149, image: '', iceCream: true },
     ],
   },
@@ -34,10 +33,21 @@ export const categories = [
   },
   {
     id: 'cookies',
-    name: 'Cookies Tin',
+    name: 'Viral Cookies Tin',
     icon: 'cookie',
     items: [
-      { id: 'viral-cookies-tin', name: 'Viral Cookies Tin', tagline: 'Cookies abhi baaki hai mere dost', price: 199, image: '', iceCream: true },
+      { id: 'choco-affair', name: 'Choco Affair', tagline: 'Cookies abhi baaki hai mere dost', price: 199, image: '', iceCream: true },
+      { id: 'nutella-obsession', name: 'Nutella Obsession', tagline: 'Abhi maza ayega na bhidu', price: 229, image: '', iceCream: true },
+    ],
+  },
+  {
+    id: 'london-strawberry',
+    name: 'London Strawberry',
+    icon: 'heart',
+    items: [
+      { id: 'berry-romance', name: 'Berry Romance', tagline: 'Strawberry, naam toh suna hoga', price: 129, image: '', iceCream: true },
+      { id: 'berry-brownie-bliss', name: 'Berry Brownie Bliss', tagline: 'Jaa Simran, jee le apni Zindagi', price: 149, image: '', iceCream: true },
+      { id: 'berry-bonanza', name: 'Berry Bonanza', tagline: 'Ye taufa hamne khudko diya hai', price: 219, image: '', iceCream: true },
     ],
   },
   {
